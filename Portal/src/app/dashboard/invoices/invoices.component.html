@@ -1,5 +1,5 @@
 <h2 class="sub-header">Invoices</h2>
-<div class="table-responsive" ng-init="getInvoices()">
+<div class="table-responsive" *ngIf="invoices">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -13,12 +13,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let invoice of invoices">
-        <td>{{invoice._id}}</td>
-        <td>{{invoice.user.firstName}} {{invoice.user.lastName}}</td>
-          <td>{{invoice.service}}</td>
-          <td>{{invoice.price}}</td>
-          <td>{{invoice.status}}</td>
-          <td><a href="/dashboard/invoice/detail/{{ invoice._id }}" class="btn btn-primary">Details</a> <a href="/dashboard/invoice/edit/{{ invoice._id }}" class="btn btn-default">Edit</a> <button (click)="deleteInvoice(invoice._id)" class="btn btn-danger">Delete</button></td>
+        <td *ngIf="invoice.user">{{ invoice._id}}</td>
+        <td *ngIf="invoice.user">{{ invoice.user.firstName}} {{ invoice.user.lastName}}</td>
+        <td *ngIf="invoice.user">{{ invoice.service}}</td>
+        <td *ngIf="invoice.user">{{ invoice.price}}</td>
+        <td *ngIf="invoice.user">{{ invoice.status}}</td>
+        <td *ngIf="invoice.user"><a href="/dashboard/invoice/detail/{{ invoice._id }}" class="btn btn-primary">Details</a> <a href="/dashboard/invoice/edit/{{ invoice._id }}" class="btn btn-default">Edit</a> <button (click)="deleteInvoice(invoice._id)" class="btn btn-danger">Delete</button></td>
       </tr>
     </tbody>
   </table>

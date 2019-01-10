@@ -26,6 +26,7 @@ export class User {
             city: data.city,
             state: data.state,
             zip: data.zip,
+            password: data.password,
             createdAt: data.createdAt
         });
     }

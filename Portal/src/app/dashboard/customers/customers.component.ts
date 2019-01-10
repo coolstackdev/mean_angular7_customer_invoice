@@ -18,6 +18,7 @@ export class CustomersComponent implements OnInit {
     const userSub = this.invoiceService.getUsers().subscribe(users => {
       this.users = users;
       userSub.unsubscribe();
+      console.log('customers page, oninit');
       console.log(users);
     })
 

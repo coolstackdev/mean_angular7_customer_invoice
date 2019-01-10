@@ -13,7 +13,7 @@
 	</ul>
   <br>
   <h3>Customer Invoices</h3>
-	<table class="table table-striped" ng-init="getCustomerInvoices()">
+	<table class="table table-striped">
           <thead>
             <tr>
               <th>#</th>
@@ -28,7 +28,7 @@
               	<td>{{invoice.service}}</td>
               	<td>{{invoice.price}}</td>
               	<td>{{invoice.status}}</td>
-              	<td><a href="/dashboard/invoice/detail/{{invoice._id}}" class="btn btn-primary">Details</a> <a href="/dashboard/invoice/edit/{{invoice._id}}" class="btn btn-default">Edit</a> <button id="deleteCustomer" class="btn btn-danger">Delete</button></td>
+              	<td><a href="/dashboard/invoice/detail/{{invoice._id}}" class="btn btn-primary">Details</a> <a href="/dashboard/invoice/edit/{{invoice._id}}" class="btn btn-default">Edit</a> <button (click)="deleteInvoice(invoice._id)" class="btn btn-danger">Delete</button></td>
             </tr>
           </tbody>
         </table>

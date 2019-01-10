@@ -43,4 +43,17 @@ export class CustomerDetailComponent implements OnInit {
 
   }
 
+  deleteInvoice(id) {
+    this.invoiceService.delInvoice(id).subscribe(res => {
+      console.log(res)
+      window.location.href = '/dashboard/customer';
+    },
+      err => {
+        console.log(err);
+        window.location.href = '/dashboard/customer';
+      }
+    );
+
+  }
+
 }

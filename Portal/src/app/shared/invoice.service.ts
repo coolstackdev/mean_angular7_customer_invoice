@@ -59,6 +59,10 @@ export class InvoiceService {
     return this.http.get(environment.apiBaseUrl + '/customers/' + id, this.noAuthHeader).pipe(map((response: any) => new User().deserialize(response)));
   }
 
+  addCustomer(customer) {
+    return this.http.post(environment.apiBaseUrl + '/customers/', customer, this.noAuthHeader);
+  }
+
   updateCustomer(id, customer) {
     console.log('service file');
     return this.http.put(environment.apiBaseUrl + '/customers/' + id, customer, this.noAuthHeader);

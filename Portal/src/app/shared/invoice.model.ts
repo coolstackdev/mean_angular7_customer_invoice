@@ -8,6 +8,9 @@ export class Invoice {
     createdAt: Date;
 
     deserialize(data: any): Invoice {
+        console.log('deserialize');
+        console.log(data);
+
         return <Invoice>Object.assign({}, {
             _id: data._id,
             user: data.user,
@@ -15,7 +18,7 @@ export class Invoice {
             price: data.price,
             due: data.due,
             status: data.status,
-            createdAt: data.createAt
+            createdAt: data.createdAt
         });
     }
 }

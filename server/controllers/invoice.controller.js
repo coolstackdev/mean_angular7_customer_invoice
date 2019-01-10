@@ -27,7 +27,7 @@ module.exports.updateInvoice = (req, res, next) => {
         service: req.body.service,
         price: req.body.price,
         due: req.body.due,
-        status: req.body.due
+        status: req.body.status
     }
     console.log('////////////////////from request//////////////////');
     console.log(update);
