@@ -1,0 +1,14 @@
+{
+    "development": {
+        "PORT": 3000,
+        "MONGODB_URI": "mongodb+srv://bill:LHGAbtGaZK6vaF01@cluster0-zdx1j.mongodb.net/portal?retryWrites=true",
+        "JWT_SECRET": "MYSECRETKEY",
+        "JWT_EXP": "5m" 
+    },
+    "production": {
+        "PORT": 80,
+        "MONGODB_URI": "mongodb://xxxxx/DB_Name",
+        "JWT_SECRET": "MYSECRETKEY",
+        "JWT_EXP": "5m"
+    }
+}

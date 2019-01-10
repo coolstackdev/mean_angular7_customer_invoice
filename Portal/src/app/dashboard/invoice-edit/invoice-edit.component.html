@@ -1,0 +1,34 @@
+<h2 class="sub-header">Edit Invoice</h2>
+<form *ngIf="invoice" (ngSubmit)="onSubmit()">
+   <div class="form-group">
+    <label>Service</label>
+    <input type="text" class="form-control" #service="ngModel" name="service" [(ngModel)]="invoice.service" placeholder="Service">
+    <input type="hidden" #_id="ngModel" name="_id" [(ngModel)]="invoice._id">
+  </div>
+  <div class="form-group">
+    <label>Customer</label>
+    <select class="form-control" [(ngModel)]="invoice.user" name="user" #user="ngModel">
+      <option *ngFor="let user of users" value="{{ user._id}}">
+        {{ user.firstName }} {{ user.lastName}} ({{ user.company }})
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input type="text" class="form-control" #company="ngModel" name="company" [(ngModel)]="invoice.price" placeholder="Price">
+  </div>
+  <div class="form-group">
+    <label>Due Date</label>
+    <input type="text" class="form-control" #due="ngModel" name="due" [(ngModel)]="invoice.due" placeholder="Due Date">
+  </div>
+  <div class="form-group">
+    <label>Status</label>
+    <select class="form-control" [(ngModel)]="invoice.status" name="status" #status="ngModel">
+      <option value="Unpaid">Unpaid</option>
+      <option value="Paid">Paid</option>
+      <option value="Overdue">Overdue</option>
+      <option value="Cancelled">Cancelled</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

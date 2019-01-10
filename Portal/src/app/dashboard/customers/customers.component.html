@@ -1,0 +1,23 @@
+<h2 class="sub-header">Customers</h2>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Company</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user._id }}</td>
+      <td>{{ user.firstName }} {{ user.lastName }}</td>
+      <td>{{ user.company }}</td>
+      <td>{{ user.email }}</td>
+      <td><a href="/dashboard/customer/detail/{{ user._id}}" class="btn btn-primary">Details</a> <a href="/dashboard/customer/edit/{{ user._id }}" class="btn btn-default">Edit</a> <button id="deleteCustomer" (click)="deleteCustomer(user._id)" class="btn btn-danger">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,38 @@
+<div *ngIf="user">
+	<img class="pull-right img-small" src="{{ user.logoUrl}}">
+  <div class="clearfix"></div>
+	<h2 class="sub-header">{{ user.firstName}} {{ user.lastName}}</h2>
+	<ul class="list-group">
+		<li class="list-group-item"><strong>Company: </strong> {{ user.company}}</li>
+		<li class="list-group-item"><strong>Email: </strong> {{ user.email}}</li>
+		<li class="list-group-item"><strong>Phone: </strong> {{ user.phone}}</li>
+		<li class="list-group-item"><strong>Street Address: </strong> {{ user.street}}</li>
+		<li class="list-group-item"><strong>City: </strong> {{ user.city}}</li>
+		<li class="list-group-item"><strong>State: </strong> {{ user.state}}</li>
+		<li class="list-group-item"><strong>Zip: </strong> {{ user.zip}}</li>
+	</ul>
+  <br>
+  <h3>Customer Invoices</h3>
+	<table class="table table-striped" ng-init="getCustomerInvoices()">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Service</th>
+              <th>Price</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let invoice of invoices">
+            	<td>{{invoice._id}}</td>
+              	<td>{{invoice.service}}</td>
+              	<td>{{invoice.price}}</td>
+              	<td>{{invoice.status}}</td>
+              	<td><a href="/dashboard/invoice/detail/{{invoice._id}}" class="btn btn-primary">Details</a> <a href="/dashboard/invoice/edit/{{invoice._id}}" class="btn btn-default">Edit</a> <button id="deleteCustomer" class="btn btn-danger">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+ </div>
+
+
